@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - autopark@localhost" uuid="c9fa94d9-b3c9-43a2-8b09-c2537bc12426">
+    <database-info product="MySQL" version="5.6.27-enterprise-commercial-advanced-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.38 ( Revision: fe541c166cec739c74cc727c5da96c1028b4834a )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="autopark"/>
+    <table name="car" schema="" catalog="autopark" type="TABLE">
+      <column name="idCar" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idDriver" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="marka" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="gosNumber" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="yearMake" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idCar"/>
+      <foreign-key name="FK_car_driver" columns="idDriver" ref-table="driver" ref-schema="" ref-catalog="autopark" ref-columns="idDriver" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_park_car" table="park" schema="" catalog="autopark" columns="idCar"/>
+      <index name="FK_car_driver" unique="false" columns="idDriver"/>
+    </table>
+    <table name="driver" schema="" catalog="autopark" type="TABLE">
+      <column name="idDriver" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idUser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="surname" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lastname" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="age" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="mail" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idDriver"/>
+      <foreign-key name="FK_driver_user" columns="idUser" ref-table="user" ref-schema="" ref-catalog="autopark" ref-columns="idUser" update-rule="0" delete-rule="0" deferrability="2"/>
+      <exported-key name="FK_car_driver" table="car" schema="" catalog="autopark" columns="idDriver"/>
+      <index name="FK_driver_user" unique="false" columns="idUser"/>
+    </table>
+    <table name="park" schema="" catalog="autopark" type="TABLE">
+      <column name="idPark" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="idCar" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="countTrip" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="countRepair" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="access" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="idPark"/>
+      <foreign-key name="FK_park_car" columns="idCar" ref-table="car" ref-schema="" ref-catalog="autopark" ref-columns="idCar" update-rule="0" delete-rule="0" deferrability="2"/>
+      <index name="FK_park_car" unique="false" columns="idCar"/>
+    </table>
+    <table name="user" schema="" catalog="autopark" type="TABLE">
+      <column name="idUser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="login" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="idUser"/>
+      <exported-key name="FK_driver_user" table="driver" schema="" catalog="autopark" columns="idUser"/>
+    </table>
+  </data-source>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - autopark@localhost" uuid="c9fa94d9-b3c9-43a2-8b09-c2537bc12426">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>autopark.*</schema-pattern>
+      <default-schemas>autopark.*</default-schemas>
+    </data-source>
+  </component>
+</project>
