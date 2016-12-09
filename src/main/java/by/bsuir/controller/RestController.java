@@ -7,16 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/rest")
+@RequestMapping("/autopark")
 public class RestController {
 
     @Autowired
     DataServices dataServices;
+
+    @RequestMapping(value = "/aaa", method = RequestMethod.GET)
+    public ModelAndView listUser() {
+        return new ModelAndView("aaa.html");
+    }
 
     @RequestMapping(value = "/user", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody

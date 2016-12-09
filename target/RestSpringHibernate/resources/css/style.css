@@ -1,0 +1,33 @@
+#logform {
+    padding-left: 400px;
+    padding-top: 100px;
+    width: 800px;
+}
+
+#regForm {
+    padding-left: 400px;
+    padding-top: 50px;
+    width: 800px;
+}
+
+#newCar {
+    padding-left: 10px;
+    padding-top: 20px;
+    width: 600px;
+}
+
+.sortorder:after {
+    content: '\25b2';
+}
+.sortorder.reverse:after {
+    content: '\25bc';
+}
+
+#infoUser {
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.lb-lg {
+    font-size: 20px;
+}
